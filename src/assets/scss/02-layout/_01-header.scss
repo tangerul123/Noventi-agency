@@ -1,0 +1,421 @@
+.header-area {
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: 0.3s all ease-in-out;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+    @media #{$extraBig-device} {
+        padding: 0 90px;
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: 0.3s all ease-in-out;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: sticky 1s;
+    
+}
+
+@keyframes sticky {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(0%); }
+}
+
+// Logo
+.header-logo {
+    padding: 20px 0;
+
+    & img {
+        max-height: 40px;
+        width: auto;
+
+        @media #{$large-mobile} {
+            max-height: 32px;
+        }
+    }
+}
+
+// Desktop Nav
+.main-menu {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & li {
+        margin: 0 30px;
+        position: relative;
+
+        @media #{$laptop-device} {
+            margin: 0 17px;
+        }
+
+        @media #{$desktop-device} {
+            margin: 0 12px;
+        }
+
+        & a {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #fff;
+            opacity: 0.7;
+            display: block;
+            padding: 30px 0;
+            transition: 0.3s all ease-in-out;
+
+            @media #{$desktop-device} {
+                font-size: 15px;
+                padding: 26px 0;
+            }
+        }
+
+        &:hover > a {
+            color: #C0F662;
+            opacity: 1;
+        }
+    }
+}
+
+// Header Meta
+.header-meta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+
+    @media #{$large-mobile} {
+        gap: 12px;
+    }
+}
+
+// Search Trigger Button
+.header-meta-search {
+    display: flex;
+    align-items: center;
+
+    & .search-trigger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s all ease-in-out;
+
+        & svg {
+            fill: #fff;
+            transition: 0.3s all ease-in-out;
+        }
+
+        &:hover svg {
+            fill: #C0F662;
+        }
+    }
+}
+
+// Hamburger Toggle
+.toggle-btn {
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1px;
+
+    & span {
+        display: block;
+        height: 2px;
+        background-color: #fff;
+        margin: 3px 0;
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+
+        &:first-child {
+            width: 18px;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        &:nth-child(2) {
+            width: 28px;
+        }
+
+        &:last-child {
+            width: 18px;
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+
+    &:hover span:first-child,
+    &:hover span:last-child {
+        width: 28px;
+    }
+}
+
+/*----------------------------------------*/
+/*  Search Overlay
+/*----------------------------------------*/
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+
+        & .search-overlay-inner {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+.search-overlay-inner {
+    width: 100%;
+    max-width: 700px;
+    padding: 0 24px;
+    position: relative;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.35s ease 0.1s, opacity 0.35s ease 0.1s;
+
+    @media #{$large-mobile} {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 12px;
+    gap: 12px;
+}
+
+.search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    font-family: "Inter Tight", sans-serif;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    @media #{$large-mobile} {
+        font-size: 20px;
+    }
+
+    @media #{$small-mobile} {
+        font-size: 16px;
+    }
+}
+
+.search-submit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    & svg {
+        fill: #fff;
+        width: 24px;
+        height: 24px;
+        transition: 0.3s ease;
+    }
+
+    &:hover svg {
+        fill: #C0F662;
+    }
+}
+
+.search-close {
+    position: absolute;
+    top: -60px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: 0.3s ease;
+
+    &:hover {
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+
+    @media #{$large-mobile} {
+        top: -50px;
+        right: 20px;
+    }
+}
+
+/*----------------------------------------*/
+/*  Mobile Menu CSS
+/*----------------------------------------*/
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100%;
+    background-color: #080909;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &.active {
+        left: 0;
+    }
+
+    @media #{$small-mobile} {
+        width: 290px;
+    }
+
+    @media #{$extra-small-mobile} {
+        width: 100%;
+    }
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+
+    & .mobile-menu-logo img {
+        max-height: 36px;
+        width: auto;
+    }
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+
+    &:hover {
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+}
+
+.mobile-menu-body {
+    flex: 1;
+    padding: 10px 28px;
+    overflow-y: auto;
+}
+
+.mobile-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        & a {
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.75);
+            display: block;
+            padding: 14px 0;
+            font-family: "Inter Tight", sans-serif;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+
+            &:hover {
+                color: #C0F662;
+                padding-left: 6px;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.mobile-menu-footer {
+    padding: 22px 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+
+    & .mobile-menu-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+}

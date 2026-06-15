@@ -1,0 +1,354 @@
+/*----------------------------------------*/
+/*  02. Hero Banner CSS
+/*----------------------------------------*/
+.hero-area {
+    overflow: hidden;
+    padding-top: 170px;
+    padding-bottom: 120px;
+
+    @media #{$desktop-device} {
+        padding-top: 140px;
+        padding-bottom: 100px;
+    }
+
+    @media #{$tablet-device} {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    @media #{$large-mobile} {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    @media #{$small-mobile} {
+        padding-top: 90px;
+        padding-bottom: 50px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+}
+
+.hero-content-left {
+    padding-top: 50px;
+
+    @media #{$tablet-device} {
+        padding-top: 30px;
+    }
+
+    @media #{$large-mobile} {
+        padding-top: 20px;
+    }
+
+    & .hero-Subtitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        & img {
+            @media #{$large-mobile} {
+                width: 20px;
+            }
+        }
+
+        & h2 {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 32px;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: "Inter Tight", sans-serif;
+
+            @media #{$desktop-device} {
+                font-size: 17px;
+                line-height: 28px;
+            }
+
+            @media #{$tablet-device} {
+                font-size: 15px;
+                line-height: 26px;
+            }
+
+            @media #{$large-mobile} {
+                font-size: 13px;
+                line-height: 22px;
+            }
+
+            @media #{$small-mobile} {
+                font-size: 12px;
+            }
+        }
+    }
+
+    & .hero-title {
+        margin-top: 30px;
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 70px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0;
+
+        @media #{$desktop-device} {
+            font-size: 48px;
+            line-height: 58px;
+        }
+
+        @media #{$tablet-device} {
+            font-size: 42px;
+            line-height: 52px;
+            margin-top: 20px;
+        }
+
+        @media #{$large-mobile} {
+            font-size: 34px;
+            line-height: 44px;
+            margin-top: 16px;
+        }
+
+        @media #{$small-mobile} {
+            font-size: 28px;
+            line-height: 38px;
+        }
+
+        @media #{$extra-small-mobile} {
+            font-size: 24px;
+            line-height: 34px;
+        }
+    }
+
+    & .hero-client-avatar {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-top: 50px;
+
+        @media #{$desktop-device} {
+            margin-top: 36px;
+            gap: 18px;
+        }
+
+        @media #{$tablet-device} {
+            margin-top: 28px;
+            gap: 16px;
+        }
+
+        @media #{$large-mobile} {
+            margin-top: 20px;
+            gap: 14px;
+        }
+
+        & img {
+            @media #{$large-mobile} {
+                max-width: 100px;
+            }
+
+            @media #{$small-mobile} {
+                max-width: 80px;
+            }
+        }
+
+        & h4 {
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 70px;
+            color: transparent;
+            text-transform: uppercase;
+            -webkit-text-stroke: 2px #fff;
+            text-rendering: geometricPrecision;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Inter Tight", sans-serif;
+
+            @media #{$laptop-device} {
+            font-size: 54px;
+            }
+            @media #{$desktop-device} {
+                font-size: 48px;
+                line-height: 58px;
+            }
+
+            @media #{$tablet-device} {
+                font-size: 42px;
+                line-height: 52px;
+            }
+
+            @media #{$large-mobile} {
+                font-size: 34px;
+                line-height: 44px;
+                -webkit-text-stroke: 1.5px #fff;
+            }
+
+            @media #{$small-mobile} {
+                font-size: 28px;
+                line-height: 38px;
+            }
+
+            @media #{$extra-small-mobile} {
+                font-size: 24px;
+                line-height: 34px;
+            }
+        }
+    }
+
+    & .hero-badges {
+        padding-top: 190px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 400px;
+
+        @media #{$desktop-device} {
+            padding-top: 120px;
+        }
+
+        @media #{$tablet-device} {
+            padding-top: 50px;
+            max-width: 100%;
+        }
+
+        @media #{$large-mobile} {
+            padding-top: 30px;
+            max-width: 100%;
+        }
+
+        & .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.20);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: -0.02em;
+            font-weight: 500;
+            font-family: "Inter Tight", sans-serif;
+
+            @media #{$desktop-device} {
+                font-size: 16px;
+            }
+
+            @media #{$tablet-device} {
+                font-size: 15px;
+                padding: 5px 10px;
+            }
+
+            @media #{$large-mobile} {
+                font-size: 14px;
+                padding: 4px 10px;
+            }
+
+            @media #{$small-mobile} {
+                font-size: 13px;
+                padding: 4px 8px;
+            }
+
+            & img {
+                @media #{$large-mobile} {
+                    width: 14px;
+                }
+            }
+        }
+    }
+}
+
+.hero-content-right {
+    @media #{$tablet-device} {
+        margin-top: 40px;
+    }
+
+    @media #{$large-mobile} {
+        margin-top: 32px;
+    }
+
+    & .hero-left-shape {
+        padding-bottom: 20px;
+
+        @media #{$large-mobile} {
+            display: none;
+        }
+
+        & img {
+            @media #{$desktop-device} {
+                max-width: 80%;
+            }
+
+            @media #{$tablet-device} {
+                max-width: 60%;
+            }
+        }
+    }
+
+    & .hero-content-right-inner {
+        & .hero-content-right-para {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 32px;
+            color: #fff;
+            font-family: "Inter Tight", sans-serif;
+
+            @media #{$desktop-device} {
+                font-size: 17px;
+                line-height: 28px;
+            }
+
+            @media #{$tablet-device} {
+                font-size: 16px;
+                line-height: 26px;
+                br {
+                    display: none;
+                }
+            }
+
+            @media #{$large-mobile} {
+                font-size: 15px;
+                line-height: 24px;
+                br {
+                    display: none;
+                }
+            }
+
+            @media #{$small-mobile} {
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+
+        & .hero-content-right-btn {
+            margin-top: 30px;
+
+            @media #{$large-mobile} {
+                margin-top: 20px;
+            }
+
+            & .white-btn {
+                font-size: 20px;
+                padding: 0px 22px;
+
+                @media #{$desktop-device} {
+                    font-size: 17px;
+                    padding: 0px 18px;
+                }
+
+                @media #{$tablet-device} {
+                    font-size: 16px;
+                    padding: 0px 16px;
+                }
+
+                @media #{$large-mobile} {
+                    font-size: 15px;
+                    padding: 0px 16px;
+                }
+
+                @media #{$small-mobile} {
+                    font-size: 14px;
+                    padding: 0px 14px;
+                }
+            }
+        }
+    }
+}

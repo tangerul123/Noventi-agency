@@ -1,0 +1,265 @@
+/*----------------------------------------*/
+/*  08. Team CSS
+/*----------------------------------------*/
+.team-section {
+    background: #f0f0f0;
+    
+    @media #{$small-mobile} {
+      padding-right: 10px;
+      padding-left: 10px;
+      
+    }
+
+    .team-top {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 50px;
+
+        @media #{$desktop-device} {
+            gap: 28px;
+        }
+
+        @media #{$tablet-device} {
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        @media #{$large-mobile} {
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .team-label {
+            font-size: 20px;
+            font-weight: 500;
+            color: #6B6B6B;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            padding-top: 6px;
+            font-family: "Inter Tight", sans-serif;
+
+            @media #{$desktop-device} {
+                font-size: 16px;
+            }
+
+            @media #{$tablet-device} {
+                font-size: 15px;
+                width: 100%;
+                padding-top: 0;
+            }
+
+            @media #{$large-mobile} {
+                font-size: 14px;
+                width: 100%;
+                padding-top: 0;
+            }
+        }
+
+        .team-heading {
+            flex: 1;
+
+            @media #{$large-mobile} {
+                width: 100%;
+                flex: none;
+            }
+
+            h2 {
+                font-size: 44px;
+                font-weight: 600;
+                color: #080909;
+                line-height: 1;
+                margin: 0;
+
+                @media #{$desktop-device} { font-size: 36px; }
+                @media #{$tablet-device}  { font-size: 30px; }
+                @media #{$large-mobile}   { font-size: 26px; }
+                @media #{$small-mobile}   { font-size: 22px; }
+            }
+
+            h3 {
+                font-size: 44px;
+                font-weight: 600;
+                color: #080909;
+                opacity: 30%;
+                line-height: 1;
+                margin: 0;
+
+                @media #{$desktop-device} { font-size: 36px; }
+                @media #{$tablet-device}  { font-size: 30px; }
+                @media #{$large-mobile}   { font-size: 26px; }
+                @media #{$small-mobile}   { font-size: 22px; }
+            }
+        }
+
+        .team-meet {
+            padding-top: 6px;
+            flex-shrink: 0;
+
+            @media #{$tablet-device} {
+                padding-top: 0;
+                align-self: flex-end;
+            }
+
+            @media #{$large-mobile} {
+                padding-top: 0;
+                align-self: flex-end;
+            }
+
+            a {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 20px;
+                font-weight: 600;
+                color: #080909;
+                text-decoration: none;
+                border-bottom: 1.5px solid #080909;
+                padding-bottom: 2px;
+                transition: color 0.3s ease, border-color 0.3s ease;
+                font-family: 'ClashDisplay', sans-serif;
+
+                @media #{$desktop-device} { font-size: 17px; }
+                @media #{$tablet-device}  { font-size: 15px; }
+                @media #{$large-mobile}   { font-size: 14px; }
+
+                &:hover {
+                    color: #CAFF33;
+                    border-color: #CAFF33;
+                }
+
+                & img {
+                    @media #{$large-mobile} {
+                        width: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .team-swiper {
+        overflow: hidden;
+        padding-bottom: 70px;
+
+        .swiper-slide {
+            width: 300px;
+            height: 420px;
+
+            &.swiper-slide-active {
+                .team-card {
+                    border: 2px solid #CAFF33;
+                    .team-card-info {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            .team-card {
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                border: 2px solid transparent;
+                transition: border-color 0.4s ease;
+                cursor: pointer;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    filter: brightness(0.85);
+                    transition: filter 0.4s ease;
+                }
+
+                &:hover img {
+                    filter: brightness(0.7);
+                }
+
+                .team-card-info {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 40px 20px 24px;
+                    background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+                    opacity: 0;
+                    transform: translateY(10px);
+                    transition: opacity 0.4s ease, transform 0.4s ease;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+
+                    .team-plus {
+                        width: 52px;
+                        height: 52px;
+                        border-radius: 50%;
+                        background: #CAFF33;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #000;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        font-size: 32px;
+                        font-weight: 600;
+                        color: #fff;
+                        margin: 0 0 4px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: #fff;
+                        opacity: 80%;
+                        font-family: "Inter Tight", sans-serif;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .team-nav {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 58px;
+
+        .team-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, color 0.3s ease;
+
+            &.prev {
+                background: #111;
+                color: #fff;
+                &:hover { background: #CAFF33; color: #000; }
+            }
+
+            &.next {
+                background: #ddd;
+                color: #111;
+                &:hover { background: #CAFF33; color: #000; }
+            }
+        }
+    }
+}
+
+.swiper-slide-active {
+    transform: translate3d(0px, 15px, 0px) rotateX(0deg) rotateY(0deg) scale(1) !important;
+}

@@ -1,0 +1,301 @@
+/*----------------------------------------*/
+/*  06. Projects CSS
+/*----------------------------------------*/
+.projects-section {
+    background: #EBEBEB;
+    @media #{$small-mobile} {
+      padding-right: 10px;
+      padding-left: 10px;
+      overflow: hidden;
+    }
+
+    .projects-top {
+        display: flex;
+        align-items: flex-start;
+        gap: 133px;
+        margin-bottom: 50px;
+
+        @media #{$desktop-device} {
+            gap: 60px;
+        }
+
+        @media #{$tablet-device} {
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        @media #{$large-mobile} {
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .projects-label {
+            font-size: 20px;
+            color: #6B6B6B;
+            padding-top: 6px;
+            font-weight: 500;
+            font-family: "Inter Tight", sans-serif;
+            white-space: nowrap;
+
+            @media #{$desktop-device} {
+                font-size: 16px;
+            }
+
+            @media #{$tablet-device} {
+                font-size: 15px;
+                width: 100%;
+                padding-top: 0;
+            }
+
+            @media #{$large-mobile} {
+                font-size: 14px;
+                width: 100%;
+                padding-top: 0;
+            }
+        }
+
+        .projects-heading {
+            flex: 1;
+
+            @media #{$tablet-device} {
+                flex: 1;
+            }
+
+            @media #{$large-mobile} {
+                width: 100%;
+                flex: none;
+            }
+
+            h2 {
+                font-size: 44px;
+                font-weight: 700;
+                color: #111;
+                line-height: 1;
+                margin: 0;
+
+                @media #{$desktop-device} {
+                    font-size: 36px;
+                }
+
+                @media #{$tablet-device} {
+                    font-size: 30px;
+                }
+
+                @media #{$large-mobile} {
+                    font-size: 26px;
+                }
+
+                @media #{$small-mobile} {
+                    font-size: 22px;
+                }
+            }
+
+            h3 {
+                font-size: 44px;
+                font-weight: 700;
+                color: #aaa;
+                line-height: 1;
+                margin: 0;
+
+                @media #{$desktop-device} {
+                    font-size: 36px;
+                }
+
+                @media #{$tablet-device} {
+                    font-size: 30px;
+                }
+
+                @media #{$large-mobile} {
+                    font-size: 26px;
+                }
+
+                @media #{$small-mobile} {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        .projects-nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
+
+            @media #{$large-mobile} {
+                align-self: flex-end;
+            }
+
+            .swiper-btn {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.3s ease, color 0.3s ease;
+
+                @media #{$tablet-device} {
+                    width: 42px;
+                    height: 42px;
+                }
+
+                @media #{$large-mobile} {
+                    width: 38px;
+                    height: 38px;
+                }
+
+                &.prev {
+                    background: #111;
+                    color: #fff;
+
+                    &:hover {
+                        background: #CAFF33;
+                        color: #000;
+                    }
+                }
+
+                &.next {
+                    background: #ddd;
+                    color: #111;
+
+                    &:hover {
+                        background: #CAFF33;
+                        color: #000;
+                    }
+                }
+
+                & img {
+                    @media #{$large-mobile} {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .projects-swiper {
+        overflow: visible;
+
+        @media #{$desktop-device},
+        #{$laptop-device},
+        #{$tablet-device},
+        #{$large-mobile},
+        #{$extra-small-mobile} {
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            padding-top: 60px;
+            transition: padding-top 0.4s ease;
+
+            &.swiper-slide-active {
+                padding-top: 0;
+            }
+
+            .project-card {
+                .card-img {
+                    position: relative;
+                    border-radius: 16px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                        display: block;
+                    }
+
+                    &:hover .card-arrow {
+                        display: block;
+                    }
+
+                    .card-arrow {
+                        display: none;
+                        position: absolute;
+                        bottom: 50%;
+                        left: 50%;
+                        width: 44px;
+                        height: 44px;
+                        line-height: 42px;
+                        text-align: center;
+                        background: #CAFF33;
+                        border-radius: 50%;
+                        color: #000;
+                        z-index: 1;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(to top, rgba(#CAFF33, 0.8), transparent);
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+                }
+
+                &:hover .card-img::after {
+                    opacity: 1;
+                }
+
+                .card-info {
+                    padding: 16px 4px;
+
+                    h4 {
+                        font-size: 28px;
+                        font-weight: 700;
+                        color: #111;
+                        margin-bottom: 10px;
+
+                        @media #{$desktop-device} {
+                            font-size: 22px;
+                        }
+
+                        @media #{$tablet-device} {
+                            font-size: 20px;
+                        }
+
+                        @media #{$large-mobile} {
+                            font-size: 18px;
+                        }
+                    }
+
+                    .card-tags {
+                        display: flex;
+                        gap: 8px;
+                        flex-wrap: wrap;
+
+                        span {
+                            font-size: 18px;
+                            padding: 4px 12px;
+                            border: 1px solid #ccc;
+                            border-radius: 20px;
+                            color: #3E3B3F;
+                            font-family: "Inter Tight", sans-serif;
+
+                            @media #{$desktop-device} {
+                                font-size: 14px;
+                            }
+
+                            @media #{$tablet-device} {
+                                font-size: 13px;
+                                padding: 3px 10px;
+                            }
+
+                            @media #{$large-mobile} {
+                                font-size: 13px;
+                                padding: 3px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
